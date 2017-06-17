@@ -2,6 +2,39 @@
   bodegas works!
 </p>
 
-<div>
-  <h1>{{bodega.nombre}}</h1>
+<div class="container">
+  <h1>¡Bienvenidos al registro de bodegas!</h1>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <pre>
+          {{nuevaBodega|json}}
+        </pre>
+
+        <label class="col-form-label">
+          Nombre Bodega:
+        </label>
+        <input class="form-control"
+               placeholder="Ingrese el nombre de la bodega"
+               [(ngModel)]="nuevaBodega.nombre" type="text">
+      </div>
+
+      <button class="btn btn-success" (click)="crearBodega()">
+        Crear Bodega
+      </button>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div *ngFor="let bodega of arregloBodegas">
+      <div class="card" style="width: 20rem;">
+        <div class="card-block">
+          <h4  class="card-title">{{bodega.nombre}}</h4>
+            <p class="card-text">{{bodega.nombre}} + {{bodega.direccion}} + {{bodega.capacidadEnToneladas}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 </div>

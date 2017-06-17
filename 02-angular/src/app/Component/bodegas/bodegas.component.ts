@@ -12,6 +12,20 @@ export class BodegasComponent implements OnInit {
   @Input() bodega:BodegaClass
   bodegas:BodegaClass[]=[];
   nuevaBodega:BodegaClass = new BodegaClass();
+  arregloBodegas = [
+    {
+      nombre: "Bodeguita del queso",
+      direccion: "Mercado central",
+      capacidadEnToneladas:12
+    }, {
+      nombre: "Universal",
+      direccion: "12 de Octubre",
+      capacidadEnToneladas:20
+    }, {
+      nombre: "Al Kosto",
+      direccion: "Sur de Quito",
+      capacidadEnToneladas:200
+    }]
 
   constructor(private _http:Http) { }
 
